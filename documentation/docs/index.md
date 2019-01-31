@@ -43,6 +43,23 @@ Then open url [http://localhost:8000/](http://localhost:8000/) in your browser.
     * [ ] Dashboard
     * [ ] Menu
     * [ ] CRUD operations
+* [ ] Bootstrap components
+    * [ ] Alerts
+    * [ ] Badge
+    * [ ] Breadcrumb
+    * [ ] Buttons
+    * [ ] Cards
+    * [ ] Dropdown
+    * [ ] Forms
+    * [ ] Modal
+    * [ ] Navs
+    * [ ] Navbar
+    * [ ] Pagination
+    * [ ] Popovers
+    * [ ] Progress
+    * [ ] Spinner
+    * [ ] Tooltip
+* [ ] Notifications [noty](https://ned.im/noty/#/) or Bootstrap Tosats
 
 
 ## License
