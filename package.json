@@ -1,0 +1,7 @@
+{
+  "name": "react-bootstrap-framework-lerna",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.10.7"
+  }
+}
