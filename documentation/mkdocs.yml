@@ -1,0 +1,46 @@
+# Project information
+site_name: 'React-bootstrap-framework'
+site_description: 'React bootstrap frontend framework'
+site_author: 'pjhl'
+#site_url: ''
+
+# Repository
+repo_name: 'pjhl/react-bootstrap-framework'
+repo_url: 'https://github.com/pjhl/react-bootstrap-framework'
+
+# Pages
+nav:
+  - Home: index.md
+
+# Copyright
+copyright: 'Copyright &copy; 2019 PJHL'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'deep-purple'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo:
+    icon: 'help_outline'
+edit_uri: 'documentation/docs'
+
+# Customization
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/pjhl'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
