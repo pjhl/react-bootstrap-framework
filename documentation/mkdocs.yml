@@ -27,7 +27,7 @@ theme:
     code: 'Roboto Mono'
   logo:
     icon: 'help_outline'
-edit_uri: 'documentation/docs'
+edit_uri: 'tree/master/documentation/docs'
 
 # Customization
 extra:
