@@ -1,0 +1,24 @@
+{
+  "name": "rbf-formatter",
+  "version": "1.0.0",
+  "description": "Fields formatter (React bootstrap framework)",
+  "main": "src/index.js",
+  "scripts": {
+    "lint:fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "pjhl <pjhl.coder@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "standard": "^12.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
