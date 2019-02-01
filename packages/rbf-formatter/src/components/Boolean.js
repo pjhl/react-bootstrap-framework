@@ -1,22 +1,20 @@
-import React from 'react'
 import Formatter from './Formatter'
 import PropTypes from 'prop-types'
 
 export default class Boolean extends Formatter {
   static propTypes = {
-    strict: PropTypes.bool
+    value: PropTypes.bool.isRequired,
+    labelTrue: PropTypes.node,
+    labelFalse: PropTypes.node
   }
   static defaultProps = {
-    strict: true
+    labelTrue: 'Yes',
+    labelFalse: 'No'
   }
   render () {
-    // TODO: This method is very mocked
-    const { attribute = '', value = '' } = this
+    const { value, labelTrue, labelFalse } = this.props
     return (
-      <div>
-        {attribute}<br />
-        {value}
-      </div>
+      value ? labelTrue : labelFalse
     )
   }
 }
