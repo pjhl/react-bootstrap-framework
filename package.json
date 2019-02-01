@@ -2,7 +2,7 @@
   "name": "react-bootstrap-framework-lerna",
   "private": true,
   "scripts": {
-    "lint:fix": "npx standard --fix",
+    "lint:fix": "utils/lint-fix.sh",
     "docs:serve": "docker run --rm -it -p 8000:8000 -v ${PWD}/documentation:/docs squidfunk/mkdocs-material"
   },
   "devDependencies": {
