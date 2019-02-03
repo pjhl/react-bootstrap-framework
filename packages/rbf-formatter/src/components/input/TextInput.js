@@ -8,14 +8,16 @@ export default class TextInput extends Input {
     attribute: PropTypes.string,
     value: PropTypes.string,
     record: PropTypes.object,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    htmlOptions: PropTypes.object
   }
   static defaultProps = {
     name: '',
     attribute: '',
     value: '',
     record: {},
-    onChange: (value, attribute, record) => {}
+    onChange: (value, attribute, record) => {},
+    htmlOptions: null
   }
   onChange = (e) => {
     const value = e.target.value
@@ -23,12 +25,13 @@ export default class TextInput extends Input {
     this.props.onChange(value, attribute, record)
   }
   render () {
-    const { value } = this.props
+    const { value, htmlOptions } = this.props
     return (
       <input
         type='text'
         value={value}
-        onChange={this.onChange} />
+        onChange={this.onChange}
+        {...htmlOptions} />
     )
   }
 }
