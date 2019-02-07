@@ -3,12 +3,12 @@ import { Container } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
 const styles = {
-  container: bgImage => ({
+  container: ({ bgImage, paddingTop, paddingBottom }) => ({
     backgroundImage: bgImage ? `url(${bgImage})` : null,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    paddingTop: 100,
-    paddingBottom: 100
+    paddingTop,
+    paddingBottom
   }),
   cardTitle: {
     textAlign: 'center',
@@ -16,18 +16,26 @@ const styles = {
   }
 }
 
-const SimpleLayout = ({ children, bgImage }) => (
-  <Container fluid style={styles.container(bgImage)}>
+const SimpleLayout = ({ children, bgImage, paddingTop, paddingBottom }) => (
+  <Container fluid style={styles.container({
+    bgImage,
+    paddingTop,
+    paddingBottom
+  })}>
     { children }
   </Container>
 )
 
 SimpleLayout.propTypes = {
-  bgImage: PropTypes.string
+  bgImage: PropTypes.string,
+  paddingTop: PropTypes.number,
+  paddingBottom: PropTypes.number
 }
 
 SimpleLayout.defaultProps = {
-  bgImage: ''
+  bgImage: '',
+  paddingTop: 100,
+  paddingBottom: 100
 }
 
 export default SimpleLayout

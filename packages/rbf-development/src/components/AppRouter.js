@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Button } from 'react-bootstrap'
 import LoginFeature from '../features/login/index'
+import ErrorFeature from '../features/error/index'
 
 const Index = () => (
   <Fragment>
@@ -29,6 +30,9 @@ const AppRouter = () => (
         <LinkContainer to='/login/'>
           <Button variant='primary'>Login</Button>
         </LinkContainer>
+        <LinkContainer to='/error/'>
+          <Button variant='primary'>Error</Button>
+        </LinkContainer>
       </nav>
       <hr />
 
@@ -36,6 +40,12 @@ const AppRouter = () => (
       <Route path='/about/' component={About} />
       <Route path='/users/' component={Users} />
       <Route path='/login/' component={LoginFeature} />
+      <Route path='/error/' render={(props) => (
+        <ErrorFeature {...props}
+          code={404}
+          message='NotFound'
+          description={'We can\'t find the page you\'re looking for.'} />
+      )} />
     </div>
   </Router>
 )
