@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Button } from 'react-bootstrap'
+import LoginFeature from '../features/login/index'
 
 const Index = () => (
   <Fragment>
@@ -16,35 +17,25 @@ const AppRouter = () => (
   <Router>
     <div>
       <nav>
-        <ul>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/about/'>About</Link>
-          </li>
-          <li>
-            <Link to='/users/'>Users</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <h1>React router bootstrap nav:</h1>
-      <nav>
         <LinkContainer to='/' exact>
-          <Button variant='primary'>Home</Button>
+          <Button variant='default'>Home</Button>
         </LinkContainer>
         <LinkContainer to='/about/'>
-          <Button variant='primary'>About</Button>
+          <Button variant='default'>About</Button>
         </LinkContainer>
         <LinkContainer to='/users/'>
-          <Button variant='primary'>Users</Button>
+          <Button variant='default'>Users</Button>
+        </LinkContainer>
+        <LinkContainer to='/login/'>
+          <Button variant='primary'>Login</Button>
         </LinkContainer>
       </nav>
+      <hr />
 
       <Route path='/' exact component={Index} />
       <Route path='/about/' component={About} />
       <Route path='/users/' component={Users} />
+      <Route path='/login/' component={LoginFeature} />
     </div>
   </Router>
 )
