@@ -10,7 +10,7 @@ const styles = {
     marginTop: 16
   },
   hintParagraph: {
-    color: 'white',
+    color: '#888',
     fontSize: '0.8em',
     textAlign: 'center',
     marginTop: 12
