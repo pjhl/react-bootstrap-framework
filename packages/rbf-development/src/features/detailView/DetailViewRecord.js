@@ -55,4 +55,14 @@ export default class DetailViewRecord {
       </ListGroup.Item>
     )
   }
+  func (name, { render = () => {} } = {}) {
+    const label = this.labelName || this.constructor.getDefaultLabel(name)
+    const value = render(this.record, name)
+    return (
+      <ListGroup.Item>
+        <strong>{ label }</strong>:<br />
+        { value }
+      </ListGroup.Item>
+    )
+  }
 }

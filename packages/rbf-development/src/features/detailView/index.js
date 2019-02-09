@@ -40,7 +40,19 @@ export default () => (
         { item().boolean('public') }
         { item().text('name') }
         { item().label('Youtube category').text('category') }
-        { item().label('Tags').text('tags') }
+        { item().label('Tags').func('tags', {
+          render: (record, name) => (
+            record[name]
+              .map((el, index) => (
+                <Fragment key={index}>
+                  <span className='badge badge-secondary'>
+                    { el }
+                  </span>
+                  {' '}
+                </Fragment>
+              ))
+          )
+        }) }
         <h3 className='text-center'>Statistics</h3>
         { item().label('Comments').text('statistics.comments') }
         { item().label('Views').text('statistics.views') }
