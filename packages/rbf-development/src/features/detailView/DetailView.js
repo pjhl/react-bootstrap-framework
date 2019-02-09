@@ -12,7 +12,7 @@ export default class DetailView extends Component {
   }
   render () {
     const { record, children } = this.props
-    const item = new DetailViewRecord(record)
+    const item = () => new DetailViewRecord(record)
     return (
       <ListGroup variant='flush'>
         { children(item) }

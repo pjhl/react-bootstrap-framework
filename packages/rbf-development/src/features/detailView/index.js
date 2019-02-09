@@ -34,11 +34,11 @@ export default () => (
   <DetailView record={record}>
     {(item) => {
       return <Fragment>
-        { item.label('Id').text('id') }
-        { item.label('Link').text('link') }
-        { item.label('name').text('name') }
-        { item.label('Category').text('category') }
-        { item.label('Tags').text('tags') }
+        { item().text('id') }
+        { item().text('link') }
+        { item().text('name') }
+        { item().label('Youtube category').text('category') }
+        { item().label('Tags').text('tags') }
       </Fragment>
     }}
   </DetailView>
