@@ -35,4 +35,14 @@ export default class DetailViewRecord {
       </ListGroup.Item>
     )
   }
+  boolean (name, { values = ['Yes', 'No'] } = {}) {
+    const label = this.labelName || this.constructor.getDefaultLabel(name)
+    const value = resolveObjectValue(this.record, name)
+    return (
+      <ListGroup.Item>
+        <strong>{ label }</strong>:<br />
+        <i className='text-primary'>{ value ? values[0] : values[1] }</i>
+      </ListGroup.Item>
+    )
+  }
 }

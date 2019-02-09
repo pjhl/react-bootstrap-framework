@@ -4,6 +4,7 @@ import DetailView from './DetailView'
 const record = {
   id: 1,
   link: 'https://www.youtube.com/watch?v=QUvVdTlA23w',
+  public: true,
   name: 'Marilyn Manson - Sweet Dreams (Are Made Of This) (Alt. Version)',
   description: `Best of Marilyn Manson: https://goo.gl/5Z3C5t
     Subscribe here: https://goo.gl/iK9UwZ
@@ -36,6 +37,7 @@ export default () => (
       return <Fragment>
         { item().text('id') }
         { item().text('link') }
+        { item().boolean('public') }
         { item().text('name') }
         { item().label('Youtube category').text('category') }
         { item().label('Tags').text('tags') }
