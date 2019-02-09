@@ -39,6 +39,16 @@ export default () => (
         { item().text('name') }
         { item().label('Youtube category').text('category') }
         { item().label('Tags').text('tags') }
+        <h3 className='text-center'>Statistics</h3>
+        { item().label('Comments').text('statistics.comments') }
+        { item().label('Views').text('statistics.views') }
+        { item().label('Likes').text('statistics.likes') }
+        { item().label('Dislikes').text('statistics.dislikes') }
+        <h3 className='text-center'>Channel</h3>
+        { item().text('channel.id') }
+        { item().text('channel.link') }
+        { item().text('channel.name') }
+        { item().text('channel.subscribes') }
       </Fragment>
     }}
   </DetailView>
