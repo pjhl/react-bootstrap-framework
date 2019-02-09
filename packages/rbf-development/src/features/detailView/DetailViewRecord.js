@@ -45,4 +45,14 @@ export default class DetailViewRecord {
       </ListGroup.Item>
     )
   }
+  url (name) {
+    const label = this.labelName || this.constructor.getDefaultLabel(name)
+    const value = resolveObjectValue(this.record, name)
+    return (
+      <ListGroup.Item>
+        <strong>{ label }</strong>:<br />
+        <a href={value}>{ value }</a>
+      </ListGroup.Item>
+    )
+  }
 }

@@ -36,7 +36,7 @@ export default () => (
     {(item) => {
       return <Fragment>
         { item().text('id') }
-        { item().text('link') }
+        { item().url('link') }
         { item().boolean('public') }
         { item().text('name') }
         { item().label('Youtube category').text('category') }
