@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Button } from 'react-bootstrap'
 import LoginFeature from '../features/login/index'
 import ErrorFeature from '../features/error/index'
+import DetailViewFeature from '../features/detailView/index'
 
 const Index = () => (
   <Fragment>
@@ -33,6 +34,9 @@ const AppRouter = () => (
         <LinkContainer to='/error/'>
           <Button variant='primary'>Error</Button>
         </LinkContainer>
+        <LinkContainer to='/detail-view/'>
+          <Button variant='primary'>DetailView</Button>
+        </LinkContainer>
       </nav>
       <hr />
 
@@ -46,6 +50,7 @@ const AppRouter = () => (
           message='NotFound'
           description={'We can\'t find the page you\'re looking for.'} />
       )} />
+      <Route path='/detail-view/' component={DetailViewFeature} />
     </div>
   </Router>
 )
