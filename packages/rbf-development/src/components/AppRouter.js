@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap'
 import LoginFeature from '../features/login/index'
 import ErrorFeature from '../features/error/index'
 import DetailViewFeature from '../features/detailView/index'
+import FormsFeature from '../features/forms/index'
 
 const Index = () => (
   <Fragment>
@@ -37,6 +38,9 @@ const AppRouter = () => (
         <LinkContainer to='/detail-view/'>
           <Button variant='primary'>DetailView</Button>
         </LinkContainer>
+        <LinkContainer to='/forms/'>
+          <Button variant='primary'>Forms</Button>
+        </LinkContainer>
       </nav>
       <hr />
 
@@ -51,6 +55,7 @@ const AppRouter = () => (
           description={'We can\'t find the page you\'re looking for.'} />
       )} />
       <Route path='/detail-view/' component={DetailViewFeature} />
+      <Route path='/forms/' component={FormsFeature} />
     </div>
   </Router>
 )
