@@ -6,6 +6,7 @@ import LoginFeature from '../features/login/index'
 import ErrorFeature from '../features/error/index'
 import DetailViewFeature from '../features/detailView/index'
 import FormsFeature from '../features/forms/index'
+import TestReduxFeature from '../features/testRedux/index'
 
 const Index = () => (
   <Fragment>
@@ -41,6 +42,9 @@ const AppRouter = () => (
         <LinkContainer to='/forms/'>
           <Button variant='primary'>Forms</Button>
         </LinkContainer>
+        <LinkContainer to='/test-redux/'>
+          <Button variant='primary'>Test redux</Button>
+        </LinkContainer>
       </nav>
       <hr />
 
@@ -56,6 +60,7 @@ const AppRouter = () => (
       )} />
       <Route path='/detail-view/' component={DetailViewFeature} />
       <Route path='/forms/' component={FormsFeature} />
+      <Route path='/test-redux/' component={TestReduxFeature} />
     </div>
   </Router>
 )
