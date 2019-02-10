@@ -20,11 +20,11 @@ const markChoices = [
 ]
 
 export default () => (
-  <Form>
-    <TextInput attribute='title' record={record} label='Title' />
+  <Form record={record}>
+    <TextInput attribute='title' label='Title' />
     <br />
-    <BooleanInput attribute='seen' record={record} label='Seen' />
+    <BooleanInput attribute='seen' label='Seen' />
     <br />
-    <SelectInput attribute='mark' record={record} label='Mark' choices={markChoices} />
+    <SelectInput attribute='mark' label='Mark' choices={markChoices} />
   </Form>
 )
