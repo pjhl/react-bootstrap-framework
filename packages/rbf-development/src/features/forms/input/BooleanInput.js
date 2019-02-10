@@ -5,12 +5,18 @@ export default class BooleanInput extends Component {
   static propTypes = {
     attribute: PropTypes.string,
     record: PropTypes.object,
-    label: PropTypes.string
+    label: PropTypes.string,
+    onChange: PropTypes.func
   }
   static defaultProps = {
     attribute: '',
     record: {},
-    label: ''
+    label: '',
+    onChange: () => {}
+  }
+  onChange = (e) => {
+    const value = e.target.checked
+    this.props.onChange(value, this.props.attribute)
   }
   render () {
     const { attribute, record, label } = this.props
@@ -18,7 +24,8 @@ export default class BooleanInput extends Component {
     return <input
       type='checkbox'
       name={attribute}
-      defaultChecked={value}
-      placeholder={label} />
+      checked={value}
+      placeholder={label}
+      onChange={this.onChange} />
   }
 }

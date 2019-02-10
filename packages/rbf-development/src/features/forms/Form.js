@@ -10,7 +10,7 @@ export default class Form extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault()
-    console.log('onSubmit executed')
+    console.log('onSubmit execute')
   }
   render () {
     const { children, record } = this.props
@@ -20,7 +20,10 @@ export default class Form extends Component {
           if (el.type.prototype instanceof Component) {
             return React.cloneElement(el, {
               key: index,
-              record
+              record,
+              onChange: (value, attribute) => {
+                console.log(`Attribute "${attribute}" changed to: ${value}`)
+              }
             })
           }
           return el

@@ -26,5 +26,7 @@ export default () => (
     <BooleanInput attribute='seen' label='Seen' />
     <br />
     <SelectInput attribute='mark' label='Mark' choices={markChoices} />
+    <hr />
+    <button>Submit</button>
   </Form>
 )

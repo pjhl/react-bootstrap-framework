@@ -5,12 +5,18 @@ export default class TextInput extends Component {
   static propTypes = {
     attribute: PropTypes.string,
     record: PropTypes.object,
-    label: PropTypes.string
+    label: PropTypes.string,
+    onChange: PropTypes.func
   }
   static defaultProps = {
     attribute: '',
     record: {},
-    label: ''
+    label: '',
+    onChange: () => {}
+  }
+  onChange = (e) => {
+    const value = e.target.value
+    this.props.onChange(value, this.props.attribute)
   }
   render () {
     const { attribute, record, label } = this.props
@@ -18,7 +24,8 @@ export default class TextInput extends Component {
     return <input
       type='text'
       name={attribute}
-      defaultValue={value}
+      value={value}
+      onChange={this.onChange}
       placeholder={label} />
   }
 }
