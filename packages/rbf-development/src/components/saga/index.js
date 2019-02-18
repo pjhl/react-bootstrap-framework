@@ -1,14 +1,8 @@
-import {
-  takeEvery
-} from 'redux-saga/effects'
-
-function * testSaga (action) {
-  console.log('Test saga')
-  yield 1
-}
+import { fork } from 'redux-saga/effects'
+import login from './login'
 
 function * rootSaga () {
-  yield takeEvery('TEST', testSaga)
+  yield fork(login)
 }
 
 export default rootSaga
