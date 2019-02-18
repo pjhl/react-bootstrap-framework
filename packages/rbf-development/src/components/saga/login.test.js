@@ -1,6 +1,6 @@
 /* global test, expect */
 import { take } from 'redux-saga/effects'
-import loginFlow from './login'
+import { loginFlow } from './login'
 
 test('success login', () => {
   const iterator = loginFlow()

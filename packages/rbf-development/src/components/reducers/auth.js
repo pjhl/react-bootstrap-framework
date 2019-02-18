@@ -4,6 +4,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'AUTH_CHECK_SUCCESS':
     case 'LOGIN_SUCCESS':
       return {
         isLoggedIn: true
@@ -14,6 +15,9 @@ export default (state = initialState, action) => {
       return {
         isLoggedIn: false
       }
+    case 'AUTH_CHECK_ERROR':
+      console.error('Auth check error:', action.payload)
+      return state
     default:
       return state
   }

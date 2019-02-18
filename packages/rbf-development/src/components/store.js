@@ -23,4 +23,7 @@ sagaMiddleware.run(saga)
 
 export const testAction = () => store.dispatch({ type: 'TEST' })
 
+// Initialize app
+store.dispatch({ type: 'AUTH_CHECK_REQUESTED' })
+
 export default store
