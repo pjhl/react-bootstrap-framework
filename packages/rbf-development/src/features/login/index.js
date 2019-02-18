@@ -3,6 +3,9 @@ import SimpleLayout from '../../components/layouts/SimpleLayout'
 import bgImage from '../../images/login-bg-sky.jpg'
 import { Row, Col, Card } from 'react-bootstrap'
 import LoginFormContainer from './components/LoginFormContainer'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 const styles = {
   cardTitle: {
@@ -17,8 +20,15 @@ const styles = {
   }
 }
 
-export default class Login extends Component {
+export class Login extends Component {
+  static propTypes = {
+    isLoggedIn: PropTypes.bool
+  }
   render () {
+    const { isLoggedIn } = this.props
+    if (isLoggedIn) {
+      return <Redirect to='/' />
+    }
     return (
       <SimpleLayout bgImage={bgImage}>
         <Row>
@@ -40,3 +50,9 @@ export default class Login extends Component {
     )
   }
 }
+
+export default connect(
+  state => ({
+    isLoggedIn: state.auth.isLoggedIn
+  })
+)(Login)
