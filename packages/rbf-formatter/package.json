@@ -4,6 +4,7 @@
   "description": "Fields formatter (React bootstrap framework)",
   "main": "src/index.js",
   "scripts": {
+    "lint": "standard",
     "lint:fix": "standard --fix",
     "test": "jest"
   },

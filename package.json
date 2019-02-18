@@ -2,7 +2,7 @@
   "name": "react-bootstrap-framework-lerna",
   "private": true,
   "scripts": {
-    "lint:fix": "utils/lint-fix.sh",
+    "lint": "utils/lint.sh",
     "docs:serve": "docker run --rm -it -p 8000:8000 -v ${PWD}/documentation:/docs squidfunk/mkdocs-material"
   },
   "devDependencies": {
@@ -12,7 +12,7 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:fix"
+      "pre-commit": "npm run lint"
     }
   }
 }
