@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SimpleLayout from '../../components/layouts/SimpleLayout'
 import bgImage from '../../images/login-bg-sky.jpg'
 import { Row, Col, Card } from 'react-bootstrap'
-import LoginForm from '../../components/LoginForm'
+import LoginFormContainer from './components/LoginFormContainer'
 
 const styles = {
   cardTitle: {
@@ -28,7 +28,7 @@ export default class Login extends Component {
                 Login
               </Card.Title>
               <Card.Body>
-                <LoginForm />
+                <LoginFormContainer />
               </Card.Body>
             </Card>
             <p style={styles.hintParagraph}>

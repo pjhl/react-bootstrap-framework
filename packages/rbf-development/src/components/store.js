@@ -23,10 +23,4 @@ sagaMiddleware.run(saga)
 
 export const testAction = () => store.dispatch({ type: 'TEST' })
 
-store.dispatch({ type: 'LOGIN_REQUESTED',
-  payload: {
-    email: 'admin@gmail.com',
-    password: 'admin'
-  } })
-
 export default store
