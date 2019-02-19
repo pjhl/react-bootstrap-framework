@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Button } from 'react-bootstrap'
 import {
   Login as LoginFeature,
   Logout as LogoutFeature
@@ -11,6 +9,7 @@ import DetailViewFeature from '../features/detailView/index'
 import FormsFeature from '../features/forms/index'
 import TestReduxFeature from '../features/testRedux/index'
 import MainMenu from '../features/mainMenu/'
+import { Container } from 'react-bootstrap'
 
 const Index = () => (
   <Fragment>
@@ -25,48 +24,22 @@ const AppRouter = () => (
   <Router>
     <div>
       <MainMenu />
-      <nav>
-        <LinkContainer to='/' exact>
-          <Button variant='default'>Home</Button>
-        </LinkContainer>
-        <LinkContainer to='/about/'>
-          <Button variant='default'>About</Button>
-        </LinkContainer>
-        <LinkContainer to='/users/'>
-          <Button variant='default'>Users</Button>
-        </LinkContainer>
-        <LinkContainer to='/login/'>
-          <Button variant='primary'>Login</Button>
-        </LinkContainer>
-        <LinkContainer to='/error/'>
-          <Button variant='primary'>Error</Button>
-        </LinkContainer>
-        <LinkContainer to='/detail-view/'>
-          <Button variant='primary'>DetailView</Button>
-        </LinkContainer>
-        <LinkContainer to='/forms/'>
-          <Button variant='primary'>Forms</Button>
-        </LinkContainer>
-        <LinkContainer to='/test-redux/'>
-          <Button variant='primary'>Test redux</Button>
-        </LinkContainer>
-      </nav>
-      <hr />
-
-      <Route path='/' exact component={Index} />
-      <Route path='/about/' component={About} />
-      <Route path='/users/' component={Users} />
-      <Route path='/login/' component={LoginFeature} />
-      <Route path='/logout/' component={LogoutFeature} />
-      <Route path='/error/' render={(props) => (
-        <ErrorFeature {...props}
-          code={404}
-          message='NotFound'
-          description={'We can\'t find the page you\'re looking for.'} />
-      )} />
-      <Route path='/detail-view/' component={DetailViewFeature} />
-      <Route path='/forms/' component={FormsFeature} />
-      <Route path='/test-redux/' component={TestReduxFeature} />
+      <Container fluid>
+        <Route path='/' exact component={Index} />
+        <Route path='/about/' component={About} />
+        <Route path='/users/' component={Users} />
+        <Route path='/login/' component={LoginFeature} />
+        <Route path='/logout/' component={LogoutFeature} />
+        <Route path='/error/' render={(props) => (
+          <ErrorFeature {...props}
+            code={404}
+            message='NotFound'
+            description={'We can\'t find the page you\'re looking for.'} />
+        )} />
+        <Route path='/detail-view/' component={DetailViewFeature} />
+        <Route path='/forms/' component={FormsFeature} />
+        <Route path='/test-redux/' component={TestReduxFeature} />
+      </Container>
     </div>
   </Router>
 )
