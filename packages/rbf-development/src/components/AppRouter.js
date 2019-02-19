@@ -10,6 +10,7 @@ import FormsFeature from '../features/forms/index'
 import TestReduxFeature from '../features/testRedux/index'
 import MainMenu from '../features/mainMenu/'
 import { Container } from 'react-bootstrap'
+import ImagesFeature from '../features/images/'
 
 const Index = () => (
   <Fragment>
@@ -39,6 +40,7 @@ const AppRouter = () => (
         <Route path='/detail-view/' component={DetailViewFeature} />
         <Route path='/forms/' component={FormsFeature} />
         <Route path='/test-redux/' component={TestReduxFeature} />
+        <Route path='/images/' component={ImagesFeature} />
       </Container>
     </div>
   </Router>

@@ -41,6 +41,11 @@ export class MainMenu extends Component {
               <NavDropdown.Item>Test redux</NavDropdown.Item>
             </LinkContainer>
           </NavDropdown>
+          <NavDropdown title='Demo'>
+            <LinkContainer to='/images/'>
+              <NavDropdown.Item>Images</NavDropdown.Item>
+            </LinkContainer>
+          </NavDropdown>
         </Nav>
         <Nav>
           { isLoggedIn
