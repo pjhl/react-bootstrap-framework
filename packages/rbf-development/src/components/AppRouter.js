@@ -2,7 +2,10 @@ import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Button } from 'react-bootstrap'
-import LoginFeature from '../features/login/index'
+import {
+  Login as LoginFeature,
+  Logout as LogoutFeature
+} from '../features/login/index'
 import ErrorFeature from '../features/error/index'
 import DetailViewFeature from '../features/detailView/index'
 import FormsFeature from '../features/forms/index'
@@ -54,6 +57,7 @@ const AppRouter = () => (
       <Route path='/about/' component={About} />
       <Route path='/users/' component={Users} />
       <Route path='/login/' component={LoginFeature} />
+      <Route path='/logout/' component={LogoutFeature} />
       <Route path='/error/' render={(props) => (
         <ErrorFeature {...props}
           code={404}

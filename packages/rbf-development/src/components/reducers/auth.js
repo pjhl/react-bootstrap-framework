@@ -12,6 +12,7 @@ export default (state = initialState, action) => {
     case 'LOGIN_ERROR':
     case 'LOGIN_CANCELED':
     case 'LOGOUT':
+    case 'AUTH_CHECK_FAILED':
       return {
         isLoggedIn: false
       }

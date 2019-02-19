@@ -14,7 +14,6 @@ import authProvider, {
 
 // TODO: write this login function
 export function * authorize (params) {
-  console.log('Authorize params:', params)
   try {
     yield call(authProvider, AUTH_LOGIN, params)
     yield put({ type: 'LOGIN_SUCCESS' })
@@ -39,11 +38,23 @@ export function * loginFlow () {
   }
 }
 
+export function * logoutFlow () {
+  while (true) {
+    yield take('LOGOUT')
+    console.log('Go logout')
+    yield call(authProvider, AUTH_LOGOUT)
+  }
+}
+
 export function * authCheck () {
   yield take('AUTH_CHECK_REQUESTED')
   try {
     const user = yield call(authProvider, AUTH_INFO)
-    yield put({ type: 'AUTH_CHECK_SUCCESS', payload: user })
+    if (user) {
+      yield put({ type: 'AUTH_CHECK_SUCCESS', payload: user })
+    } else {
+      yield put({ type: 'AUTH_CHECK_FAILED' })
+    }
   } catch (err) {
     yield put({ type: 'AUTH_CHECK_ERROR', payload: err })
   }
@@ -51,6 +62,7 @@ export function * authCheck () {
 
 function * loginSaga () {
   yield fork(loginFlow)
+  yield fork(logoutFlow)
   yield fork(authCheck)
 }
 
