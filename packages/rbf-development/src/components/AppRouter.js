@@ -7,6 +7,7 @@ import ErrorFeature from '../features/error/index'
 import DetailViewFeature from '../features/detailView/index'
 import FormsFeature from '../features/forms/index'
 import TestReduxFeature from '../features/testRedux/index'
+import MainMenu from '../features/mainMenu/'
 
 const Index = () => (
   <Fragment>
@@ -20,6 +21,7 @@ const Users = () => <h2>Users</h2>
 const AppRouter = () => (
   <Router>
     <div>
+      <MainMenu />
       <nav>
         <LinkContainer to='/' exact>
           <Button variant='default'>Home</Button>
