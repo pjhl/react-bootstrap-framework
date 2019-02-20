@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
   Card,
-  Form,
   ButtonToolbar,
   Button,
   DropdownButton,
   Dropdown
 } from 'react-bootstrap'
+import FilterForm from './FilterForm'
+import { TextInput } from '../input/'
 
 export default class ListView extends Component {
   static propTypes = {
@@ -24,13 +25,20 @@ export default class ListView extends Component {
       return children(record)
     })
   }
+  onChangeFilters (values) {
+    console.log('Values:', values)
+  }
   render () {
+    const { resource } = this.props
+    const filters = resource.list.params.filters
     return <Card body>
       <div className='d-flex mb-4'>
         <div>
-          <Form inline>
-            <Form.Control placeholder='Search' />
-          </Form>
+          <FilterForm onChangeFilters={this.onChangeFilters} filters={filters}>
+            <TextInput attribute='id' label='Id' />
+            <TextInput attribute='title' label='Title' />
+            <TextInput attribute='source' label='Source' />
+          </FilterForm>
         </div>
         <div className='ml-auto'>
           <ButtonToolbar>

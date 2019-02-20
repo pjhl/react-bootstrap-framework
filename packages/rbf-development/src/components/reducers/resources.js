@@ -8,7 +8,7 @@ const initialState = {
         order: null,
         page: 1,
         perPage: 10,
-        filter: {}
+        filters: {}
       },
       selectedIds: [],
       total: 22
