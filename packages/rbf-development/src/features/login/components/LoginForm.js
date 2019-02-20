@@ -1,15 +1,12 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { Field, reduxForm } from 'redux-form'
+import ReduxFormControl from '../../../components/ReduxFormControl'
 
 const styles = {
   button: {
     width: '100%'
   }
-}
-
-const ReduxFormControl = ({ input, meta, ...props }) => {
-  return <Form.Control {...props} {...input} />
 }
 
 const LoginForm = (props) => {
